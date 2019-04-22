@@ -45,13 +45,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/rconway/node_project/views/
+      device: /home/rconway/https-node/views/
       o: bind
   dhparam:
     driver: local
     driver_opts:
       type: none
-      device: /home/rconway/node_project/dhparam/
+      device: /home/rconway/https-node/dhparam/
       o: bind
 
 networks:
