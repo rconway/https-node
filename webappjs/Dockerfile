@@ -12,6 +12,8 @@ RUN npm install
 
 COPY --chown=node:node . .
 
+RUN npx tsc
+
 EXPOSE 8080
 
-CMD [ "node", "app.js" ]
+CMD [ "./dist/bin/www" ]

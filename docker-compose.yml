@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  nodejs:
+  webappjs:
     build:
-      context: .
+      context: ./webappjs
       dockerfile: Dockerfile
-    image: nodejs
-    container_name: nodejs
+    image: rconway/webappjs
+    container_name: webappjs
     restart: unless-stopped
     networks:
       - app-network
@@ -24,7 +24,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
       - dhparam:/etc/ssl/certs
     depends_on:
-      - nodejs
+      - webappjs
     networks:
       - app-network
   certbot:
@@ -45,7 +45,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/rconway/https-node/views/
+      device: /home/rconway/https-node/webappjs/dist/views/
       o: bind
   dhparam:
     driver: local
