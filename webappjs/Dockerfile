@@ -14,6 +14,6 @@ COPY --chown=node:node . .
 
 RUN npx tsc
 
-EXPOSE 8080
+EXPOSE 7000
 
 CMD [ "./dist/bin/www" ]

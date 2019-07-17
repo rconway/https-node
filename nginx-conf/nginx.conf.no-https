@@ -5,10 +5,10 @@ server {
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
 
-        server_name rconway.co.uk api.rconway.co.uk;
+        server_name rconway.co.uk app.rconway.co.uk;
 
         location / {
-                proxy_pass http://webappjs:8080;
+                proxy_pass http://webappjs:7000;
         }
 
         location ~ /.well-known/acme-challenge {
